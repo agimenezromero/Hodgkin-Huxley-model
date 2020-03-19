@@ -34,6 +34,34 @@ with ![x = n, m, h](https://render.githubusercontent.com/render/math?math=x%20%3
 
 # Some results
 
+The results shown below are obtained with an integration time step of ![h_{\mathrm{int}}=10^{-3}](https://render.githubusercontent.com/render/math?math=h_%7B%5Cmathrm%7Bint%7D%7D%3D10%5E%7B-3%7D), a total time of ![t=200\mathrm{ms}](https://render.githubusercontent.com/render/math?math=t%3D200%5Cmathrm%7Bms%7D) and the initial values of the evolved magnitudes ![V_0=0](https://render.githubusercontent.com/render/math?math=V_0%3D0), ![n_0=m_0=h_0=0.5](https://render.githubusercontent.com/render/math?math=n_0%3Dm_0%3Dh_0%3D0.5). 
+
+First results are shown for the evolution in time of the membrane potential for an intensity value of ![I=150\mathrm{pA}](https://render.githubusercontent.com/render/math?math=I%3D150%5Cmathrm%7BpA%7D).
+
+![Membrane voltage as a function of time](Results/V_t_150.png)
+
+As we can see with this input current value the stimulus is not enough to excite the neuron.
+
+Now we increase the intensity up to ![I=170\mathrm{pA}](https://render.githubusercontent.com/render/math?math=I%3D170%5Cmathrm%7BpA%7D)
+
+![Membrane voltage as a function of time](Results/V_t_170.png)
+
+Now the neuron get excited for a short period of time but it relaxes finally to a steady state with any response.
+
+Finally we increase the input current value to ![I=280\mathrm{pA}](https://render.githubusercontent.com/render/math?math=I%3D280%5Cmathrm%7BpA%7D)
+
+![Membrane voltage as a function of time](Results/V_t_280.png)
+
+As we can see in the figure, for this values of the input current the neuron is effectively excited and there are several spikes. In fact, the neuron would remain spiking if the simulation was continued, as for this values of the input current the dynamical system follows a limit cycle.
+
+So, as we increase the intensity the number of spikes increases too. In fact the frequency of spikes increases almost linearly after a certain threshold. With the program in this repository this can be computed too.
+
+![Frequency vs Intensity](Results/freq_150_350.png)
+
+As we can see the pulsing intensity is ![\nu=0](https://render.githubusercontent.com/render/math?math=%5Cnu%3D0) until a threshold is reached and a big jump is performed to ![f\sim 50\mathrm{Hz}](https://render.githubusercontent.com/render/math?math=f%5Csim%2050%5Cmathrm%7BHz%7D). After that the frequency increases almost linearly. This kind of behaviour (this discontinuous jump, basically) is characteristic of a type II excitable system.
+        
+The statistical errors made in the measurements of the pulsating frequency is represented with a red shaded area. However, their values are so small that they can't be seen.
+
 # References
 1. [Wikipedia](https://en.wikipedia.org/wiki/Hodgkin%E2%80%93Huxley_model)
 2. [W. Gerstner lectures](https://icwww.epfl.ch/~gerstner/VideoLecturesGerstner.html)
